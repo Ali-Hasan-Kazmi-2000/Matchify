@@ -1,5 +1,3 @@
----
-
 # Maticfy App
 
 **Connecting people and sparking new relationships**
