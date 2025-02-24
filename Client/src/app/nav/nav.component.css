@@ -1,0 +1,29 @@
+.navbar {
+  background-color: #f0e6d7;
+}
+
+.brown-color {
+  color: #885133;
+}
+.navbar-brand{    
+    font-weight: bold;
+}
+
+.login-btn {
+  background-color: #885133;
+  color: #fff;
+  outline: none;
+}
+
+.form-control{
+    outline: none;
+}
+
+.form-control::placeholder {
+  color: #885133
+}
+
+.dropdown, .dropdown-toggle{
+    cursor: pointer;
+    text-decoration: none;
+}

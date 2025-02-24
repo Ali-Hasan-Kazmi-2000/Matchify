@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md fixed-top">
+	<div class="container">
+		<a class="navbar-brand brown-color">Matchify</a>
+
+		@if(account_services.currentUser()){
+		<ul class="navbar-nav me-auto mb-2 mb-md-0">
+			<li class="nav-item">
+				<a class="nav-link brown-color">Matches</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link brown-color">Lists</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link brown-color">Messages</a>
+			</li>
+		</ul>
+		}
+
+		@if(account_services.currentUser()) {
+
+		<div dropdown class="dropdown">
+			<a dropdownToggle class="dropdown-toggle brown-color">Welcome user</a>
+			<div *dropdownMenu class="dropdown-menu">
+				<a class="dropdown-item">Edit Profile</a>
+				<div class="divider dropdown-divider"></div>
+				<a class="dropdown-item" (click)="logout()">Logout</a>
+			</div>
+		</div>
+		}
+
+		@if(!account_services.currentUser()) {
+		<form #loginForm="ngForm" (ngSubmit)="login()" class="d-flex">
+			<input name="username" [(ngModel)]="model.username" class="form-control me-2" placeholder="username" autocomplete="off">
+			<input name="password" [(ngModel)]="model.password" type="password" class="form-control me-2" placeholder="password">
+			<button class="btn login-btn" type="submit">Login</button>
+		</form>
+		}
+
+	</div>
+</nav>
