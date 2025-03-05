@@ -4,11 +4,12 @@ import { NavComponent } from './nav/nav.component';
 import { AccountsService } from './_services/accounts.service';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { TitleCasePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavComponent, HomeComponent, FormsModule],
+  imports: [RouterOutlet, NavComponent, HomeComponent, FormsModule, TitleCasePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

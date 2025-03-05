@@ -1,17 +1,17 @@
-<nav class="navbar navbar-expand-md fixed-top">
+<nav class="navbar navbar-expand-md navar-dark bg-primary fixed-top">
 	<div class="container">
-		<a class="navbar-brand brown-color">Matchify</a>
+		<a class="navbar-brand text-white" routerLink="/" routerLinkActive="active">Matchify</a>
 
-		@if(account_services.currentUser()){
+		@if(true){
 		<ul class="navbar-nav me-auto mb-2 mb-md-0">
 			<li class="nav-item">
-				<a class="nav-link brown-color">Matches</a>
+				<a routerLink="/members" routerLinkActive="active" class="nav-link text-white">Matches</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link brown-color">Lists</a>
+				<a routerLink="/lists" routerLinkActive="active" class="nav-link text-white">Lists</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link brown-color">Messages</a>
+				<a routerLink="/messages" routerLinkActive="active" class="nav-link text-white">Messages</a>
 			</li>
 		</ul>
 		}
@@ -19,7 +19,7 @@
 		@if(account_services.currentUser()) {
 
 		<div dropdown class="dropdown">
-			<a dropdownToggle class="dropdown-toggle brown-color">Welcome user</a>
+			<a dropdownToggle class="dropdown-toggle text-white">Welcome {{account_services.currentUser()?.username | titlecase }}</a>
 			<div *dropdownMenu class="dropdown-menu">
 				<a class="dropdown-item">Edit Profile</a>
 				<div class="divider dropdown-divider"></div>
@@ -31,8 +31,8 @@
 		@if(!account_services.currentUser()) {
 		<form #loginForm="ngForm" (ngSubmit)="login()" class="d-flex">
 			<input name="username" [(ngModel)]="model.username" class="form-control me-2" placeholder="username" autocomplete="off">
-			<input name="password" [(ngModel)]="model.password" type="password" class="form-control me-2" placeholder="password">
-			<button class="btn login-btn" type="submit">Login</button>
+			<input name="password" [(ngModel)]="model.password" type="password" class="form-control me-2 " placeholder="password">
+			<button class="btn btn-secondary" type="submit">Login</button>
 		</form>
 		}
 
